@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Maps</title>
+  <link rel="stylesheet" type="text/css" href="estilo.css">
+  <style>
+    body {
+      background-image: url('R.jpg');
+      background-size: cover;
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    nav {
+      background-color: rgba(255, 255, 255, 0.5); /* Fondo blanco transparente con 50% de opacidad */
+      padding: 10px;
+      text-align: center;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav li {
+      display: inline-block;
+      margin-right: 20px;
+     /* Color del texto */
+      font-family: "Century Gothic", sans-serif; /* Tipo de letra */
+      text-decoration: none; /* Quitar subrayado */
+    }
+
+    #map-container {
+      background-color: rgba(255, 255, 255, 0.7); /* Fondo blanco transparente */
+      padding: 20px;
+      border-radius: 10px;
+      margin: 20px;
+    }
+
+    #map {
+      height: 500px;
+      width: 100%;
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <ul >
+      <li ><a href="../veterinaria/public/index.php" style=" color: black;">Inicio</a></li>
+    </ul>
+  </nav>
+
+  <div id="map-container">
+    <div id="map"></div>
+  </div>
+
+  <script>
+    function iniciarMap() {
+      var coord = {
+        lat:  25.421748325143767,
+        lng: -101.0002973211617
+       
+      };
+      var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 15,
+        center: coord
+      });
+      var marker = new google.maps.Marker({
+        position: coord,
+        map: map
+      });
+    }
+  </script>
+
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDaeWicvigtP9xPv919E-RNoxfvC-Hqik&callback=iniciarMap"></script>
+</body>
+
+</html>
